@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Guess the number!</title>
+  </head>
+  <body>
+    <div id="app">
+      <header id="msgDisplay"></header>
+      <div>
+        Select a number between
+        <input type="text" id="userInputRangeLow"/>
+        and
+        <input type="text" id="userInputRangeHigh"/>
+      </div>
+      <input type="button" id="submitBtn2" value="Pick" onclick="getRange(userInputRangeLowEl.value, userInputRangeHighEl.value)"/>
+      <div>
+      Then guess what number i have pick for you.
+      <input type="text" id="userInput"/>
+      </div>
+      <input type="button" id="submitBtn" value="Start" onclick="guessingGame(userInputEl.value)"/>
+    </div>
+    <script type="text/javascript" src="scripts/main.js"></script>
+    <div>
+         <INPUT TYPE="button" onClick="history.go(0)" VALUE="Play Again">
+    </div>
+
+  </body>
+</html>
