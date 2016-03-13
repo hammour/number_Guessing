@@ -19,8 +19,9 @@ var ranNumber;
 // =============================================================================
 
 
-function getRange(High, Low) {
+function getRange(Low, High) {
   if (submitBtn2El.value === "Pick") {
+
       //submitBtn2El.value = "Pick again"
       userInputRangeHighEl = parseInt(High);
       userInputRangeLowEl = parseInt(Low);
@@ -37,9 +38,9 @@ function generateNumber() {
 
 function clearInput() {
   userInputEl.value = '';
-  userInputRangeLowEl = '';
-  userInputRangeHighEl = '';
-  //ranNumber = '';
+  userInputRangeLowEl.value = '';
+  userInputRangeHighEl.value = '';
+  ranNumber = '';
 };
 
 // =============================================================================
@@ -61,7 +62,7 @@ function guessingGame(userInput) {
   
   
   
-  if (!userInput) {
+  if ((!userInput) || (!userInputRangeLowEl) || (!userInputRangeHighEl)){
     if (submitBtnEl.value === "Start") {
         submitBtnEl.value = "Submit"
     }
@@ -73,7 +74,10 @@ function guessingGame(userInput) {
         console.log(ranNumber);
         submitBtnEl.value = "Start";
         submitBtn2El.value = "Pick";
-        //window.location.reload(); // This is to Play Again after winning.
+        window.location.href = "yougotit.html"
+        //submitBtn2El.onclick = getRange(userInputRangeLowEl.value, userInputRangeHighEl.value);
+        
+        // window.location.reload(); // This is to Play Again after winning.
     } else if (userInput > ranNumber) {
         msgDisplayEl.innerHTML = "Your number is greater than the secret number!"
         clearInput();
